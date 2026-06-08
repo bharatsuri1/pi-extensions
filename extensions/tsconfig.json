@@ -1,0 +1,43 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "strict": false,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "types": ["node"],
+    "paths": {
+      "@earendil-works/pi-coding-agent": [
+        "/opt/homebrew/lib/node_modules/@earendil-works/pi-coding-agent"
+      ],
+      "@earendil-works/pi-coding-agent/*": [
+        "/opt/homebrew/lib/node_modules/@earendil-works/pi-coding-agent/dist/*"
+      ],
+      "@earendil-works/pi-ai": [
+        "/opt/homebrew/lib/node_modules/@earendil-works/pi-coding-agent/node_modules/@earendil-works/pi-ai"
+      ],
+      "@earendil-works/pi-ai/*": [
+        "/opt/homebrew/lib/node_modules/@earendil-works/pi-coding-agent/node_modules/@earendil-works/pi-ai/dist/*"
+      ],
+      "@earendil-works/pi-tui": [
+        "/opt/homebrew/lib/node_modules/@earendil-works/pi-coding-agent/node_modules/@earendil-works/pi-tui"
+      ],
+      "@earendil-works/pi-tui/*": [
+        "/opt/homebrew/lib/node_modules/@earendil-works/pi-coding-agent/node_modules/@earendil-works/pi-tui/dist/*"
+      ],
+      "@earendil-works/pi-agent-core": [
+        "/opt/homebrew/lib/node_modules/@earendil-works/pi-coding-agent/node_modules/@earendil-works/pi-agent-core"
+      ],
+      "@earendil-works/pi-agent-core/*": [
+        "/opt/homebrew/lib/node_modules/@earendil-works/pi-coding-agent/node_modules/@earendil-works/pi-agent-core/dist/*"
+      ],
+      "typebox": [
+        "/opt/homebrew/lib/node_modules/@earendil-works/pi-coding-agent/node_modules/typebox"
+      ]
+    }
+  },
+  "include": ["**/*.ts"],
+  "exclude": ["node_modules"]
+}
