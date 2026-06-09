@@ -43,15 +43,15 @@ Make this repository the source of truth for personal pi extensions. Current wor
 
 ### 1. Statusline for pi
 
-- [ ] Keep statusline as a production-quality custom footer, but make it theme-aware instead of hard-coded Rosé Pine ANSI colors.
-- [ ] Add compact/responsive render modes for narrow terminals.
-- [ ] Make `/statusline` toggling restore the default footer when disabled; avoid installing a blank custom footer.
-- [ ] Confirm session reload/shutdown disposes intervals and pending render timers cleanly.
-- [ ] Improve git detection:
-  - [ ] support nested repo paths and worktrees where `.git` is a file;
-  - [ ] decide whether untracked files should count;
-  - [ ] avoid repeated `git status` when outside a repo.
-- [ ] Guard usage aggregation against missing/partial `usage` fields.
+- [x] Keep statusline as a production-quality custom footer with a deliberate Rosé Pine ANSI identity and required Nerd Font glyphs.
+- [x] Add compact/responsive render modes for narrow terminals.
+- [x] Make `/statusline` toggling restore the default footer when disabled; avoid installing a blank custom footer.
+- [x] Confirm session reload/shutdown disposes intervals and pending render timers cleanly.
+- [x] Keep git rendering instant and large-repo safe:
+  - [x] render only the branch exposed by pi footer data;
+  - [x] do not run `git status` or filesystem index polling from the footer;
+  - [x] omit dirty counts by design.
+- [x] Guard usage aggregation against missing/partial `usage` fields.
 - [ ] Add optional Codex usage segment once `codex-usage` has caching.
 
 ### 2. Context view for pi
