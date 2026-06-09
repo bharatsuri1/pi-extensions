@@ -277,8 +277,8 @@ export default function statuslineExtension(pi: ExtensionAPI) {
 			const left = tableRows([
 				{ top: iconText(ICON_DIR, shortenCwd(cwd, dirBudget), rp.iris), bottom: renderQueue() },
 				{ top: iconText(ICON_COST, formatMoney(totalCost), rp.gold, rp.gold), bottom: iconText(ICON_CONTEXT, contextText(), ctxTone, ctxTone) },
-				{ top: renderGit(), bottom: iconText(ICON_MESSAGES, `${messageCount}`, rp.text) },
-				{ top: renderAgentStatus(), bottom: iconText(ICON_TOOLS, toolText(), rp.rose, rp.rose) },
+				{ top: iconText(ICON_TOOLS, toolText(), rp.rose, rp.rose), bottom: iconText(ICON_MESSAGES, `${messageCount}`, rp.text) },
+				{ top: renderAgentStatus(), bottom: renderGit() },
 			]);
 			const right = tableRows([
 				{ top: joinSegments([iconText(ICON_MODEL, modelDisplay(modelBudget), rp.foam, rp.subtle), iconText(ICON_THINKING, thinkingLevel, rp.pine, rp.pine)]), bottom: tokens },
@@ -306,8 +306,8 @@ export default function statuslineExtension(pi: ExtensionAPI) {
 			const left = tableRows([
 				{ top: iconText(ICON_DIR, shortenCwd(cwd, dirBudget), rp.iris), bottom: renderQueue() },
 				{ top: iconText(ICON_COST, formatMoney(totalCost), rp.gold, rp.gold), bottom: iconText(ICON_CONTEXT, contextText(), ctxTone, ctxTone) },
-				{ top: renderGit(), bottom: iconText(ICON_MESSAGES, `${messageCount}`, rp.text) },
-				{ top: renderAgentStatus(), bottom: iconText(ICON_TOOLS, toolText(), rp.rose, rp.rose) },
+				{ top: iconText(ICON_TOOLS, toolText(), rp.rose, rp.rose), bottom: iconText(ICON_MESSAGES, `${messageCount}`, rp.text) },
+				{ top: renderAgentStatus(), bottom: renderGit() },
 			]);
 			const right = tableRows([
 				{ top: iconText(ICON_MODEL, modelDisplay(modelBudget), rp.foam), bottom: iconText(ICON_THINKING, thinkingLevel, rp.pine, rp.pine) },
@@ -325,8 +325,8 @@ export default function statuslineExtension(pi: ExtensionAPI) {
 		const left = tableRows([
 			{ top: iconText(ICON_DIR, shortenCwd(cwd, 16), rp.iris), bottom: renderQueue() },
 			{ top: iconText(ICON_COST, formatMoney(totalCost), rp.gold, rp.gold), bottom: iconText(ICON_CONTEXT, contextText(), ctxTone, ctxTone) },
-			{ top: renderGit(), bottom: iconText(ICON_MESSAGES, `${messageCount}`, rp.text) },
-			{ top: renderAgentStatus(), bottom: iconText(ICON_TOOLS, toolText(), rp.rose, rp.rose) },
+			{ top: iconText(ICON_TOOLS, toolText(), rp.rose, rp.rose), bottom: iconText(ICON_MESSAGES, `${messageCount}`, rp.text) },
+			{ top: renderAgentStatus(), bottom: renderGit() },
 		]);
 		const right = tableRows([
 			{ top: iconText(ICON_MODEL, modelDisplay(16), rp.foam), bottom: iconText(ICON_THINKING, thinkingLevel, rp.pine, rp.pine) },
