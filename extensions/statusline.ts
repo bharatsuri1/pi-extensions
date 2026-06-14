@@ -52,16 +52,16 @@ export default function statuslineExtension(pi: ExtensionAPI) {
 	/* ─── nerd font icons ─── */
 	const ICON_MODEL = "";
 	const ICON_THINKING = "";
-	const ICON_COST = "";
+	const ICON_COST = " ";
 	const ICON_TOKENS_UP = "";
 	const ICON_TOKENS_DOWN = "";
-	const ICON_CONTEXT = "";
-	const ICON_TOOLS = "";
+	const ICON_CONTEXT = " ";
+	const ICON_TOOLS = " ";
 	const ICON_QUEUE = "";
-	const ICON_MESSAGES = "";
+	const ICON_MESSAGES = " ";
 	const ICON_STATUS = "●";
 	const ICON_GIT_BRANCH = "";
-	const ICON_DIR = "";
+	const ICON_DIR = " ";
 
 	/* ─── Rosé Pine foreground palette ─── */
 	const ansi = (rgb: [number, number, number]) => (s: string) => `\x1b[38;2;${rgb[0]};${rgb[1]};${rgb[2]}m${s}\x1b[0m`;
