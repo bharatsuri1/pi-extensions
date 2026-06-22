@@ -56,6 +56,7 @@ export default function statuslineExtension(pi: ExtensionAPI) {
 	const ICON_TOKENS_UP = "";
 	const ICON_TOKENS_DOWN = "";
 	const ICON_CONTEXT = " ";
+	const ICON_CONTEXT_WINDOW = "";
 	const ICON_TOOLS = " ";
 	const ICON_QUEUE = "";
 	const ICON_MESSAGES = " ";
@@ -170,6 +171,10 @@ export default function statuslineExtension(pi: ExtensionAPI) {
 		return "calm";
 	}
 
+	function contextWindowText(): string {
+		return contextUsage.contextWindow > 0 ? fmtK(contextUsage.contextWindow) : "ctx";
+	}
+
 	function toolText(): string {
 		return `${promptToolCount}`;
 	}
@@ -281,7 +286,7 @@ export default function statuslineExtension(pi: ExtensionAPI) {
 				{ top: renderAgentStatus(), bottom: renderGit() },
 			]);
 			const right = tableRows([
-				{ top: joinSegments([iconText(ICON_MODEL, modelDisplay(modelBudget), rp.foam, rp.subtle), iconText(ICON_THINKING, thinkingLevel, rp.pine, rp.pine)]), bottom: tokens },
+				{ top: joinSegments([iconText(ICON_MODEL, modelDisplay(modelBudget), rp.foam, rp.subtle), iconText(ICON_CONTEXT_WINDOW, contextWindowText(), ctxTone, ctxTone), iconText(ICON_THINKING, thinkingLevel, rp.pine, rp.pine)]), bottom: tokens },
 			], "right");
 			const rowWidth = Math.max(
 				visibleWidth(left[0]) + 1 + visibleWidth(right[0]),
@@ -310,7 +315,7 @@ export default function statuslineExtension(pi: ExtensionAPI) {
 				{ top: renderAgentStatus(), bottom: renderGit() },
 			]);
 			const right = tableRows([
-				{ top: iconText(ICON_MODEL, modelDisplay(modelBudget), rp.foam), bottom: iconText(ICON_THINKING, thinkingLevel, rp.pine, rp.pine) },
+				{ top: joinSegments([iconText(ICON_MODEL, modelDisplay(modelBudget), rp.foam), iconText(ICON_CONTEXT_WINDOW, contextWindowText(), ctxTone, ctxTone)]), bottom: iconText(ICON_THINKING, thinkingLevel, rp.pine, rp.pine) },
 			], "right");
 			const rowWidth = Math.max(
 				visibleWidth(left[0]) + 1 + visibleWidth(right[0]),
@@ -329,7 +334,7 @@ export default function statuslineExtension(pi: ExtensionAPI) {
 			{ top: renderAgentStatus(), bottom: renderGit() },
 		]);
 		const right = tableRows([
-			{ top: iconText(ICON_MODEL, modelDisplay(16), rp.foam), bottom: iconText(ICON_THINKING, thinkingLevel, rp.pine, rp.pine) },
+			{ top: joinSegments([iconText(ICON_MODEL, modelDisplay(16), rp.foam), iconText(ICON_CONTEXT_WINDOW, contextWindowText(), ctxTone, ctxTone)]), bottom: iconText(ICON_THINKING, thinkingLevel, rp.pine, rp.pine) },
 		], "right");
 		return alignTables(left, right, width);
 	}
